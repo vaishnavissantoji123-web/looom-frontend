@@ -25,7 +25,7 @@ const AppLayout = () => {
       <main>
         <SidebarNav  onCreateClick={thread.openDialog}/>
         <Header />
-        <div className="w-full md:max-w-4xl mx-auto bg-red-400">
+        <div className="w-full md:max-w-4xl mx-auto ">
           <Outlet />
         </div>
         <BottomNav SidebarNav  onCreateClick={thread.openDialog}/> 
