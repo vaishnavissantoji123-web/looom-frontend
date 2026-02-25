@@ -23,9 +23,9 @@ export default function ThreadForm() {
     try {
       setLoading(true);
       await createPost({ content });
-      await createPost({ content });
       setContent("");
       navigate("/");
+      window.location();
     } catch (error) {
       setErrorMessage(error.message || "Unable to create post");
     } finally {
@@ -57,7 +57,7 @@ export default function ThreadForm() {
           <Textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="What’s new?"
+            placeholder="What's new?"
             className="bg-transparent border-none p-0 focus-visible:ring-0 leading-relaxed resize-none min-h-[80px] placeholder:text-gray-500"
           />
         </div>

@@ -1,21 +1,21 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export const useCreateThread=()=>{
-  const navigate=useNavigate();
-  const loction=useLocation();
-  const open=loction.pathname==="/create";
-  const openDialog=()=>{
-    navigate("/create");
-  } 
-  const closeDialog=()=>{
-    navigate(-1);//go back to previous page
+export const useCreateThread = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  }
-  return{
-    open,
+  const openDialog = () => {
+    navigate("/create", {
+      state: { backgroundLocation: location },
+    });
+  };
+
+  const closeDialog = () => {
+    navigate(-1);
+  };
+
+  return {
     openDialog,
-    closeDialog
-  }
-
-
-}
+    closeDialog,
+  };
+};

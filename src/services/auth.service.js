@@ -33,11 +33,10 @@ export const loginUser = async (data) => {
  */
 export const logoutUser = () => {
   localStorage.removeItem("token");
+  window.location.replace("/");
+  window.location.reload("/");
 
-  if (window.location.pathname !== "/login") {
-    window.location.href = "/login";
-  }
-};
+  };
 
 /**
  * Check authentication
