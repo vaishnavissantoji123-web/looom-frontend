@@ -5,7 +5,7 @@ import { formatTimeAgo } from "@/lib/utils";
 import { isAuthenticated } from "@/services/auth.service";
 import { toggleLike } from "@/services/social.services";
 
-export default function PostCard({ post }) {
+export default function PostCard({ post,isReply=false }) {
     const [liked, setLiked] = useState(post.liked);
     const [likeCount, setLikeCount] = useState(post.likes_count || 0);
     const [loading, setLoading] = useState(false);
@@ -56,6 +56,8 @@ export default function PostCard({ post }) {
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center text-white font-bold text-sm">
                         {avatarLetter}
                     </div>
+                    {(isReply) && 
+                    <div className="w-[20px] flex-1 mt-2 rounded-full bg-black/10"/>}
                 </div>
 
                 {/* Content */}

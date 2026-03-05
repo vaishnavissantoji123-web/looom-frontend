@@ -7,9 +7,9 @@ import {
 } from "lucide-react";
 
 export const NAV_MENU_ITEMS = [
-    { Icon: HomeIcon, active: false,isCreate:false },
-    { Icon: SearchIcon, active: false,isCreate:false },
-    { Icon: PlusIcon, active: true,isCreate:true},
-    { Icon: HeartIcon, active: false ,isCreate:false},
-    { Icon: UserIcon, active: false,isCreate:false },
+    { Icon: HomeIcon, isCreate: false, url: "/" },
+    { Icon: SearchIcon, isCreate: false, url: "/search" },
+    { Icon: PlusIcon, isCreate: true, url: "/create" },
+    { Icon: HeartIcon, isCreate: false, url: "/" },
+    { Icon: UserIcon, isCreate: false, url: "/" },
 ];
