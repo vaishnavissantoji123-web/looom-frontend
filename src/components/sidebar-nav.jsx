@@ -1,14 +1,30 @@
 import { getUser } from "@/services/auth.service";
+import LooomLogo from "../assets/looom-logo.svg";
 import NavMenu from "./nav-menu";
+import UserMenu from "./user-menu";
 
-const BottomNav = ({ onCreateClick }) => {
+const SidebarNav = ({ onCreateClick }) => {
   const currentUser = getUser();
-
   return (
-    <nav className="md:hidden fixed z-50 bottom-0 w-full flex gap-2 items-cente justify-between py-2 px-1.5 bg-white backdrop-blur-xl border-t border-black/10">
-      <NavMenu iconSize={22} onCreateClick={onCreateClick} user={currentUser} />
+    <nav className="hidden fixed left-0 top-0 h-full w-fit md:flex flex-col items-center justify-between pt-4 pb-6 px-2">
+      <a href="/" className="cursor-pointer">
+        <img src={LooomLogo} alt="logo" className="w-10 h-10 fill-black" />
+      </a>
+      <div className="flex flex-col gap-3.5">
+        <NavMenu
+          onCreateClick={onCreateClick}
+          iconSize={26}
+          user={currentUser}
+        />
+      </div>
+      <div className="py-3">
+        <UserMenu
+          size={26}
+          className="text-gray-400 hover:text-black transition-colors"
+        />
+      </div>
     </nav>
   );
 };
 
-export default BottomNav;
+export default SidebarNav;

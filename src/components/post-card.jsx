@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { formatTimeAgo } from "@/lib/utils";
 import { getUser, isAuthenticated } from "@/services/auth.service";
-import { toggleLike } from "@/services/social.services";
+import { toggleLike } from "@/services/social.service";
 
 export default function PostCard({ post, isReply = false, viewPost = false }) {
     const [liked, setLiked] = useState(post.liked);

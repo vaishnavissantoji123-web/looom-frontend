@@ -44,7 +44,7 @@ const Search = () => {
     const hasResults = users.length > 0 || posts.length > 0;
 
     return (
-        <div className="min-h-screen w-full flex flex-col items-center py-6 md:px-4">
+        <div className="min-h-screen w-full flex flex-col items-center py-6">
             <h1 className="hidden md:inline-block text-[15px] font-medium mb-4 shrink-0">Search</h1>
 
             <div className="w-full md:bg-white md:border md:border-black/10 md:rounded-3xl md:shadow-xs">
@@ -109,17 +109,17 @@ const Search = () => {
                 {/* Results with Shadcn Tabs */}
                 {!loading && !error && hasResults && (
                     <Tabs defaultValue="users" className="w-full">
-                        <TabsList className="w-full rounded-none border-b border-black/[0.06] bg-transparent h-11 p-0 gap-0">
+                        <TabsList className="m-0 w-full bg-transparent p-0 rounded-none gap-0">
                             <TabsTrigger
                                 value="users"
-                                className="flex-1 py-3 font-medium capitalize rounded-none text-gray-400 bg-transparent shadow-none border-0 outline-none ring-0 border-b border-b-transparent data-[state=active]:text-gray-950 data-[state=active]:border-b-gray-950 data-[state=active]:bg-transparent data-[state=active]:!shadow-none transition-all duration-150"
+                                className="flex-1 py-3 font-medium capitalize rounded-none text-black/40 bg-transparent shadow-none border-0 outline-none ring-0 border-b  border-b-black/20 data-[state=active]:text-black data-[state=active]:border-b-black data-[state=active]:bg-transparent data-[state=active]:!shadow-none transition-all duration-200"
                             >
                                 People
                                 <span className="ml-1.5 text-[11px] text-gray-300">{users.length}</span>
                             </TabsTrigger>
                             <TabsTrigger
                                 value="posts"
-                                className="flex-1 py-3 font-medium capitalize rounded-none text-gray-400 bg-transparent shadow-none border-0 outline-none ring-0 border-b border-b-transparent data-[state=active]:text-gray-950 data-[state=active]:border-b-gray-950 data-[state=active]:bg-transparent data-[state=active]:!shadow-none transition-all duration-150"
+                                className="flex-1 py-3 font-medium capitalize rounded-none text-black/40 bg-transparent shadow-none border-0 outline-none ring-0 border-b  border-b-black/20 data-[state=active]:text-black data-[state=active]:border-b-black data-[state=active]:bg-transparent data-[state=active]:!shadow-none transition-all duration-200"
                             >
                                 Posts
                                 <span className="ml-1.5 text-[11px] text-gray-300">{posts.length}</span>

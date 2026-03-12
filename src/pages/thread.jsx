@@ -62,8 +62,7 @@ export default function Thread() {
         );
 
     return (
-      
-        <div className="min-h-screen w-full flex flex-col items-center py-6 md:px-4">
+        <div className="min-h-screen w-full flex flex-col items-center py-6">
             {/* Header — matches Home's "Home" title row */}
             <div className="relative w-full hidden md:flex items-center mb-4 shrink-0">
                 <button

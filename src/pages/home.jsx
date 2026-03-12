@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center py-6 md:px-4">
+    <div className="min-h-screen w-full flex flex-col items-center py-6">
       <h1 className="hidden md:inline-block text-[15px] font-medium mb-4 shrink-0">Home</h1>
 
       <div className="w-full md:bg-white md:border md:border-black/10 md:rounded-3xl md:shadow-xs">
