@@ -86,7 +86,7 @@ export default function PostCard({
           className="flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
         >
           <Link2 size={15} />
-          {copied ? "copied!" : "CopyLink"}
+          {copied ? "copied!" : "CopyLink"}cccccccc
         </button>
         {isOwner && (
           <button
