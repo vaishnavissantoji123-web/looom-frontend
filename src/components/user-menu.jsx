@@ -1,35 +1,44 @@
-import React from 'react'
+import React from "react";
 import {
-    Popover,
-    PopoverContent,
-    PopoverDescription,
-    PopoverHeader,
-    PopoverTitle,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import { LogOut, MenuIcon } from 'lucide-react';
-import { logoutUser } from '@/services/auth.service';
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { LogOut, MenuIcon } from "lucide-react";
+import { isAuthenticated, logoutUser } from "@/services/auth.service";
+import { Link } from "react-router-dom";
 
-const handleLogout=()=>{
+const UserMenu = ({ size = 24, className = "", align = "start" }) => {
+  const handleLogout = () => {
     logoutUser();
-}
-const UserMenu = ({ size = 24, className = "", algin = "start" }) => {
+  };
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <button className={`outline-none cursor-pointer ${className}`}>
+          <MenuIcon size={size} />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent align={align} className="w-48 p-2">
+        {isAuthenticated() ? (
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 w-full px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors"
+          >
+            <LogOut size={16} />
+            Logout
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="flex items-center gap-2 w-full px-3 py-2 text-sm hover:bg-gray-100 rounded-md transition-colors hover:no-underline"
+          >
+            Login
+          </Link>
+        )}
+      </PopoverContent>
+    </Popover>
+  );
+};
 
-    return (
-        <Popover>
-            <PopoverTrigger asChild>
-                <button className={`outline-none cursor-pointer ${className} `} >
-                    <MenuIcon size={size}/>
-                </button>
-            </PopoverTrigger>
-            <PopoverContent  algin={algin} className={"w-48 p-2"}>
-                <button onClick={handleLogout} className=" flex items-center gap-2 w-full px-3 py2 text-sm text-red-600 hover:bg-red-50 transition-clors ">
-                    <LogOut size={16}/>
-                    logout
-                </button>
-            </PopoverContent>
-        </Popover>
-    )
-}
-
-export default UserMenu
+export default UserMenu;

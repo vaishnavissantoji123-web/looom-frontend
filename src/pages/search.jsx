@@ -179,7 +179,7 @@ const Search = () => {
                                 <p className="text-center text-sm text-gray-400 py-10">No posts found.</p>
                             ) : (
                                 posts.map((post) => (
-                                    <PostCard key={post.post_id} post={post} />
+                                    <PostCard key={post.post_id} post={post} onDelete={(id)=>setPosts(prev=>prev.filter(p=> p.post_id !==id))}/>
                                 ))
                             )}
                         </TabsContent>
