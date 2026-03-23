@@ -11,4 +11,5 @@ const BottomNav = ({ onCreateClick }) => {
   );
 };
 
+
 export default BottomNav;
