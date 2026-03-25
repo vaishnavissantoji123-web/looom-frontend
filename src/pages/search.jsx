@@ -3,7 +3,7 @@ import { Search as SearchIcon, SlidersHorizontal } from "lucide-react";
 import { Link } from "react-router-dom";
 import PostCard from "@/components/post-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { search } from "@/services/search.services.jsx";
+import { search } from "@/services/search.services";
 
 const Search = () => {
   const [query, setQuery] = useState("");
