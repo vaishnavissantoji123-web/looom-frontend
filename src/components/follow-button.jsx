@@ -4,7 +4,7 @@ export default function FollowButton({ user, onFollowChange }) {
 
     const currentUser = getUser();
 
-    if (currentUser.user_id === user.user_id) {
+    if (currentUser?.user_id === user.user_id) {
         return null;
     }
 

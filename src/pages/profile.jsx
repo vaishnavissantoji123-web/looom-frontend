@@ -96,7 +96,7 @@ const Profile = () => {
     return (
         <div className="min-h-screen w-full flex flex-col items-center py-6 ">
             <div className="relative w-full hiddeb md:flex item-center justify-center mb-4 shrink-0">
-                {currentUser.user_id !== user.user_id && (
+                {currentUser?.user_id !== user.user_id && (
                     <button
                         onClick={() => navigate(-1)}
                         className="absolute left-4.5 top-[50%]-translate-y-1/2 w-6 h-6 p-1 flex items-center justify-center transition-all duration-150 bg-white border border-black/10 rounded-full hover:scale-105 hover:shadow-5m"
@@ -105,7 +105,7 @@ const Profile = () => {
                     </button>
                 )}
                 <h1 className="hidden md:inline-block text-[15px] font-medium mb-4 shrink-0">
-                    {currentUser.user_id === user.user_id ? "Profile" : user.username}
+                    {currentUser?.user_id === user.user_id ? "Profile" : user.username}
                 </h1>
             </div>
 
