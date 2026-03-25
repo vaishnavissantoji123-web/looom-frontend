@@ -9,10 +9,10 @@ import {
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { formatTimeAgo } from "@/lib/utils";
-import { toggleLike } from "@/services/social.service";
 import { getUser, isAuthenticated } from "@/services/auth.service";
-import { deletePost } from "@/services/posts.service";
+import { toggleLike } from "@/services/social.service.js";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { deletePost } from "@/services/posts.service";
 
 export default function PostCard({
   post,
@@ -56,7 +56,6 @@ export default function PostCard({
       setLoading(false);
     }
   };
-
   const handleDelete = async () => {
     try {
       await deletePost(post.post_id);
@@ -65,7 +64,6 @@ export default function PostCard({
       console.error(err);
     }
   };
-
   const handleCopyLink = () => {
     const url = `${window.location.origin}/post/${post.post_id}`;
     navigator.clipboard.writeText(url);
@@ -75,8 +73,8 @@ export default function PostCard({
 
   const moreMenu = (
     <Popover>
-      <PopoverTrigger>
-        <button className="p-2 rounded-full text-gray-600 hover:bg-gray-100">
+      <PopoverTrigger asChild>
+        <button className="p-2 rounded-full  text-gray-600 hover:bg-gray-100">
           <MoreHorizontal size={18} />
         </button>
       </PopoverTrigger>
@@ -86,7 +84,7 @@ export default function PostCard({
           className="flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
         >
           <Link2 size={15} />
-          {copied ? "copied!" : "CopyLink"}cccccccc
+          {copied ? "Copied!" : "Copy Link"}
         </button>
         {isOwner && (
           <button
